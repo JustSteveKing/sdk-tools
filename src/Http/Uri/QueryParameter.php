@@ -15,13 +15,14 @@ final readonly class QueryParameter implements UriContract
     public function __construct(
         public string $key,
         public string|int|bool $value,
-    ) {}
+    ) {
+    }
 
     /**
      * @inheritDoc
      */
     public function toString(): string
     {
-        return $this->key . '=' . (string) $this->value;
+        return $this->key.'='.(string) $this->value;
     }
 }

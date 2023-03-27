@@ -1,0 +1,134 @@
+<?php
+
+declare(strict_types=1);
+
+namespace JustSteveKing\Tools\Http\Enums;
+
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+ */
+enum Status: int
+{
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100 */
+    case CONTINUE = 100;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101 */
+    case SWITCHING_PROTOCOLS = 101;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/102 */
+    case PROCESSING = 102;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103 */
+    case EARLY_HINTS = 103;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200 */
+    case OK = 200;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201 */
+    case CREATED = 201;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202 */
+    case ACCEPTED = 202;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/203 */
+    case NON_AUTHORITATIVE_INFORMATION = 203;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204 */
+    case NO_CONTENT = 204;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/205 */
+    case RESET_CONTENT = 205;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206 */
+    case PARTIAL_CONTENT = 206;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/207 */
+    case MULTI_STATUS = 207;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/208 */
+    case ALREADY_REPORTED = 208;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/226 */
+    case IM_USED = 226;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300 */
+    case MULTIPLE_CHOICES = 300;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301 */
+    case MOVED_PERMANENTLY = 301;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302 */
+    case FOUND = 302;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303 */
+    case SEE_OTHER = 303;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304 */
+    case NOT_MODIFIED = 304;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307 */
+    case TEMPORARY_REDIRECT = 307;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/308 */
+    case PERMANENT_REDIRECT = 308;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400 */
+    case BAD_REQUEST = 400;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 */
+    case UNAUTHORIZED = 401;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402 */
+    case PAYMENT_REQUIRED = 402;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403 */
+    case FORBIDDEN = 403;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 */
+    case NOT_FOUND = 404;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405 */
+    case METHOD_NOT_ALLOWED = 405;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406 */
+    case NOT_ACCEPTABLE = 406;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407 */
+    case PROXY_AUTHENTICATION_REQUIRED = 407;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408 */
+    case REQUEST_TIMEOUT = 408;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409 */
+    case CONFLICT = 409;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410 */
+    case GONE = 410;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411 */
+    case LENGTH_REQUIRED = 411;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412 */
+    case PRECONDITION_FAILED = 412;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413 */
+    case PAYLOAD_TOO_LARGE = 413;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/414 */
+    case URI_TOO_LONG = 414;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415 */
+    case UNSUPPORTED_MEDIA_TYPE = 415;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/416 */
+    case RANGE_NOT_SATISFIABLE = 416;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417 */
+    case EXPECTATION_FAILED = 417;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418 */
+    case IM_A_TEAPOT = 418;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/421 */
+    case MISDIRECTED_REQUEST = 421;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422 */
+    case UNPROCESSABLE_CONTENT = 422;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423 */
+    case LOCKED = 423;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/424 */
+    case FAILED_DEPENDENCY = 424;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/425 */
+    case TOO_EARLY = 425;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/426 */
+    case UPGRADE_REQUIRED = 426;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428 */
+    case PRECONDITION_REQUIRED = 428;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429 */
+    case TOO_MANY_REQUESTS = 429;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431 */
+    case REQUEST_HEADER_FIELDS_TOO_LARGE = 431;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451 */
+    case UNAVAILABLE_FOR_LEGAL_REASONS = 451;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 */
+    case INTERNAL_SERVER_ERROR = 500;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501 */
+    case NOT_IMPLEMENTED = 501;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502 */
+    case BAD_GATEWAY = 502;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503 */
+    case SERVICE_UNAVAILABLE = 503;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504 */
+    case GATEWAY_TIMEOUT = 504;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/505 */
+    case HTTP_VERSION_NOT_SUPPORTED = 505;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/506 */
+    case VARIANT_ALSO_NEGOTIATES = 506;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/507 */
+    case INSUFFICIENT_STORAGE = 507;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/508 */
+    case LOOP_DETECTED = 508;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510 */
+    case NOT_EXTENDED = 510;
+    /** @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/511 */
+    case NETWORK_AUTHENTICATION_REQUIRED = 511;
+}

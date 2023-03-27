@@ -10,5 +10,5 @@ it('can turn a query parameter into a string', function (mixed $parameter): void
             key: 'test',
             value: $parameter,
         ))->toString(),
-    )->toBeString()->toEqual('test=' . (string) $parameter);
+    )->toBeString()->toEqual('test='.(string) $parameter);
 })->with('parameters');
