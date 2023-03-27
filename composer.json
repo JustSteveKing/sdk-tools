@@ -4,7 +4,10 @@
     "homepage": "https://www.juststeveking.uk/",
     "license": "MIT",
     "keywords": [
-        "SDK", "API", "SDK tools", "PSR"
+        "SDK",
+        "API",
+        "SDK tools",
+        "PSR"
     ],
     "authors": [
         {
@@ -27,7 +30,11 @@
     "require": {
         "php": "^8.2"
     },
-    "require-dev": {},
+    "require-dev": {
+        "laravel/pint": "^1.7",
+        "pestphp/pest": "^2.2",
+        "phpstan/phpstan": "^1.10"
+    },
     "scripts": {
         "pint": [
             "./vendor/bin/pint"
