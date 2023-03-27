@@ -1,0 +1,58 @@
+{
+    "name": "juststeveking/sdk-tools",
+    "description": "A set of tools you can use to help make better SDKs.",
+    "homepage": "https://www.juststeveking.uk/",
+    "license": "MIT",
+    "keywords": [
+        "SDK", "API", "SDK tools", "PSR"
+    ],
+    "authors": [
+        {
+            "role": "Developer",
+            "name": "Steve McDougall",
+            "email": "juststevemcd@gmail.com",
+            "homepage": "https://www.juststevekin.uk/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JustSteveKing\\Tools\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JustSteveKing\\Tools\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {},
+    "scripts": {
+        "pint": [
+            "./vendor/bin/pint"
+        ],
+        "stan": [
+            "./vendor/bin/phpstan analyse"
+        ],
+        "test": [
+            "./vendor/bin/pest"
+        ]
+    },
+    "scripts-descriptions": {
+        "pint": "Run Laravel Pint to fix code styling.",
+        "stan": "Run PHPStan to check the static analysis.",
+        "test": "Run PestPHP to run the test suite."
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
