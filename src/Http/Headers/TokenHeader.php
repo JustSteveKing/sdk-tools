@@ -15,7 +15,8 @@ final readonly class TokenHeader implements HeaderContract
     public function __construct(
         public string $value,
         public string $key = 'X-API-TOKEN',
-    ) {}
+    ) {
+    }
 
     /**
      * @inheritDoc
