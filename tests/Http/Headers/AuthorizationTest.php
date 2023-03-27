@@ -10,7 +10,7 @@ it('can create a new authorization header', function (string $credentials): void
             value: $credentials,
         ))->toHeader(),
     )->toBeArray()->toEqual([
-        'Authorization' => 'Bearer ' . $credentials,
+        'Authorization' => 'Bearer '.$credentials,
     ]);
 })->with('credentials');
 
@@ -21,6 +21,6 @@ it('can change the type of Authorization header', function (string $type): void 
             type: $type,
         ))->toHeader(),
     )->toBeArray()->toEqual([
-        'Authorization' => $type . ' test',
+        'Authorization' => $type.' test',
     ]);
 })->with('types');

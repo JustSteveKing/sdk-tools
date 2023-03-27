@@ -6,17 +6,16 @@ namespace JustSteveKing\Tools\Http\Headers;
 
 use JustSteveKing\Tools\Contracts\Http\HeaderContract;
 
-final readonly class Authorization implements HeaderContract
+final readonly class TokenHeader implements HeaderContract
 {
     /**
-     * @param string $value The Authorization header value.
-     * @param string $type The type of Authorization being used.
+     * @param string $value The API Token you want to use.
+     * @param string $key The Header key you want to use.
      */
     public function __construct(
         public string $value,
-        public string $type = 'Bearer',
-    ) {
-    }
+        public string $key = 'X-API-TOKEN',
+    ) {}
 
     /**
      * @inheritDoc
@@ -24,7 +23,7 @@ final readonly class Authorization implements HeaderContract
     public function toHeader(): array
     {
         return [
-            'Authorization' => $this->type.' '.$this->value,
+            $this->key => $this->value,
         ];
     }
 }
