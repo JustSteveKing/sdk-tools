@@ -1,5 +1,23 @@
 # JustSteveKing SDK Tools
 
+<!-- BADGES_START -->
+[![Latest Version][badge-release]][packagist]
+[![Software License][badge-license]][license]
+[![Run Tests](https://github.com/JustSteveKing/sdk-tools/actions/workflows/tests.yml/badge.svg)](https://github.com/JustSteveKing/sdk-tools/actions/workflows/tests.yml)
+[![PHP Version][badge-php]][php]
+[![Total Downloads][badge-downloads]][downloads]
+
+[badge-release]: https://img.shields.io/packagist/v/juststeveking/sdk-tools.svg?style=flat-square&label=release
+[badge-license]: https://img.shields.io/packagist/l/juststeveking/sdk-tools.svg?style=flat-square
+[badge-php]: https://img.shields.io/packagist/php-v/juststeveking/sdk-tools.svg?style=flat-square
+[badge-downloads]: https://img.shields.io/packagist/dt/juststeveking/sdk-tools.svg?style=flat-square&colorB=mediumvioletred
+
+[packagist]: https://packagist.org/packages/juststeveking/sdk-tools
+[license]: https://github.com/juststeveking/sdk-tools/blob/main/LICENSE.md
+[php]: https://php.net
+[downloads]: https://packagist.org/packages/juststeveking/sdk-tools
+<!-- BADGES_END -->
+
 A set of tools you can use to help make better SDKs.
 
 ## Installation
