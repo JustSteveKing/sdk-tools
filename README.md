@@ -46,6 +46,24 @@ $request = (new Request(
 ))->toPsrRequest(); // Returns whichever PSR-7 implementation you have installed.
 ```
 
+#### Response class
+
+Using the response class, you can turn a PSR response into a response class that has a slightly friendlier API to work with.
+
+```php
+use JustSteveKing\Tools\Http\Response;
+
+$response = Response::fromPsrResponse(
+    response: $response, // Add a PSR response here.
+);
+
+$response->status(); // Get the status code.
+$response->headers(); // Get the headers from the response.
+$response->json(); // Get the payload from the response as an array.
+$response->protocol(); // Get the HTTP protocol from the response.
+$response->reason(); // Get the Http reason phrase from the response.
+```
+
 #### Payload class
 
 Using the payload class, you can take a JSON string and build a HTTP Stream.
