@@ -10,10 +10,16 @@ use Psr\Http\Message\StreamInterface;
 
 final readonly class Payload implements PayloadContract
 {
+    /**
+     * @param string $content The payload content.
+     */
     public function __construct(
         private string $content,
     ) {}
 
+    /**
+     * @inheritDoc
+     */
     public function toStream(): StreamInterface
     {
         return Psr17FactoryDiscovery::findStreamFactory()->createStream(
