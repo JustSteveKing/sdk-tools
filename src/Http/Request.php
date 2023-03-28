@@ -18,7 +18,8 @@ final readonly class Request implements RequestContract
     public function __construct(
         public Method $method,
         public string $uri,
-    ) {}
+    ) {
+    }
 
     public function toPsrRequest(): RequestInterface
     {
