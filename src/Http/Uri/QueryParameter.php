@@ -6,15 +6,15 @@ namespace JustSteveKing\Tools\Http\Uri;
 
 use JustSteveKing\Tools\Contracts\Http\UriContract;
 
-final readonly class QueryParameter implements UriContract
+final class QueryParameter implements UriContract
 {
     /**
      * @param string $key The Query Parameter key.
      * @param string|int|bool $value The Query Parameter value.
      */
     public function __construct(
-        public string $key,
-        public string|int|bool $value,
+        public readonly string $key,
+        public readonly string|int|bool $value,
     ) {
     }
 

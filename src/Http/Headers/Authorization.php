@@ -6,15 +6,15 @@ namespace JustSteveKing\Tools\Http\Headers;
 
 use JustSteveKing\Tools\Contracts\Http\HeaderContract;
 
-final readonly class Authorization implements HeaderContract
+final class Authorization implements HeaderContract
 {
     /**
      * @param string $value The Authorization header value.
      * @param string $type The type of Authorization being used.
      */
     public function __construct(
-        public string $value,
-        public string $type = 'Bearer',
+        public readonly string $value,
+        public readonly string $type = 'Bearer',
     ) {
     }
 

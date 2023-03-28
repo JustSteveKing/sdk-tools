@@ -8,13 +8,13 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use JustSteveKing\Tools\Contracts\Http\PayloadContract;
 use Psr\Http\Message\StreamInterface;
 
-final readonly class Payload implements PayloadContract
+final class Payload implements PayloadContract
 {
     /**
      * @param string $content The payload content.
      */
     public function __construct(
-        private string $content,
+        private readonly string $content,
     ) {
     }
 

@@ -18,13 +18,14 @@ jobs:
           - "lowest"
           - "highest"
         php-version:
-          - "8.2"
+            - "8.1"
+            - "8.2"
         operating-system:
           - "ubuntu-latest"
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2"
+        uses: "actions/checkout@v3"
 
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
@@ -34,7 +35,7 @@ jobs:
           ini-values: memory_limit=-1
 
       - name: "Cache Composer dependencies"
-        uses: "actions/cache@v2"
+        uses: "actions/cache@v3"
         with:
           path: |
             ~/.composer/cache
