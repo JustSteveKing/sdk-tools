@@ -1,71 +1,71 @@
 {
-    "name": "juststeveking/sdk-tools",
-    "description": "A set of tools you can use to help make better SDKs.",
-    "homepage": "https://www.juststeveking.uk/",
-    "license": "MIT",
-    "keywords": [
-        "SDK",
-        "API",
-        "SDK tools",
-        "PSR"
+  "name": "juststeveking/sdk-tools",
+  "description": "A set of tools you can use to help make better SDKs.",
+  "homepage": "https://www.juststeveking.uk/",
+  "license": "MIT",
+  "keywords": [
+    "SDK",
+    "API",
+    "SDK tools",
+    "PSR"
+  ],
+  "authors": [
+    {
+      "role": "Developer",
+      "name": "Steve McDougall",
+      "email": "juststevemcd@gmail.com",
+      "homepage": "https://www.juststevekin.uk/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "JustSteveKing\\Tools\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JustSteveKing\\Tools\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "php-http/discovery": "^1.15",
+    "psr/http-factory": "^1.0",
+    "psr/http-message": "^1.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.7",
+    "nyholm/psr7": "^1.5",
+    "pestphp/pest": "^2.2",
+    "php-http/mock-client": "^1.5",
+    "phpstan/phpstan": "^1.10",
+    "symfony/http-client": "^6.2"
+  },
+  "scripts": {
+    "pint": [
+      "./vendor/bin/pint"
     ],
-    "authors": [
-        {
-            "role": "Developer",
-            "name": "Steve McDougall",
-            "email": "juststevemcd@gmail.com",
-            "homepage": "https://www.juststevekin.uk/"
-        }
+    "stan": [
+      "./vendor/bin/phpstan analyse"
     ],
-    "autoload": {
-        "psr-4": {
-            "JustSteveKing\\Tools\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "JustSteveKing\\Tools\\Tests\\": "tests/"
-        }
-    },
-    "require": {
-        "php": "^8.1",
-        "php-http/discovery": "^1.15",
-        "psr/http-factory": "^1.0",
-        "psr/http-message": "^1.0"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.7",
-        "nyholm/psr7": "^1.5",
-        "pestphp/pest": "^2.2",
-        "php-http/mock-client": "^1.5",
-        "phpstan/phpstan": "^1.10",
-        "symfony/http-client": "^6.2"
-    },
-    "scripts": {
-        "pint": [
-            "./vendor/bin/pint"
-        ],
-        "stan": [
-            "./vendor/bin/phpstan analyse"
-        ],
-        "test": [
-            "./vendor/bin/pest"
-        ]
-    },
-    "scripts-descriptions": {
-        "pint": "Run Laravel Pint to fix code styling.",
-        "stan": "Run PHPStan to check the static analysis.",
-        "test": "Run PestPHP to run the test suite."
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "php-http/discovery": true,
-            "pestphp/pest-plugin": true
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "test": [
+      "./vendor/bin/pest"
+    ]
+  },
+  "scripts-descriptions": {
+    "pint": "Run Laravel Pint to fix code styling.",
+    "stan": "Run PHPStan to check the static analysis.",
+    "test": "Run PestPHP to run the test suite."
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": true,
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
