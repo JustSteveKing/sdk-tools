@@ -189,6 +189,37 @@ $resource->sdk()->client()->sendRequest(
 
 Of course the above code is just an example of what you can do, you can abstract around this as much as you like.
 
+#### Extending your SDK
+
+You can use the Resource class to create your own resources, and start building implementations for your API:
+
+```php
+use JustSteveKing\Tools\SDK\Resource;
+use Psr\Http\Message\ResponseInterface;
+
+class Project extends Resource
+{
+    public function list(): ResponseInterface
+    {
+        try {
+            $response = $this->sdk()->client()->sendRequest(
+                request: new Request(
+                    method: Method::GET,
+                    uri: 'https://api.domain.com/resource',
+                ),
+            )
+        } catch (Throwable $exception) {
+            throw new AcmeRequestException(
+                message: 'Failed to fetch projects from API',
+                previous: $exception,
+            );
+        }
+        
+        return $response;
+    }
+}
+```
+
 ## Testing
 
 To run the test:
