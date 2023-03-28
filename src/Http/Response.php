@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace JustSteveKing\Tools\Http;
 
-use JsonException;
 use JustSteveKing\Tools\Contracts\Http\ResponseContract;
 use Psr\Http\Message\ResponseInterface;
 
@@ -23,7 +22,8 @@ final class Response implements ResponseContract
         private readonly array $headers,
         private readonly string $protocol,
         private readonly string $reason,
-    ) {}
+    ) {
+    }
 
     /**
      * @inheritDoc
