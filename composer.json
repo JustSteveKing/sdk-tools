@@ -37,6 +37,7 @@
         "laravel/pint": "^1.7",
         "nyholm/psr7": "^1.5",
         "pestphp/pest": "^2.2",
+        "php-http/mock-client": "^1.5",
         "phpstan/phpstan": "^1.10",
         "symfony/http-client": "^6.2"
     },
