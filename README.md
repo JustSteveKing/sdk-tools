@@ -84,15 +84,110 @@ $header = (new TokenHeader(
 ))->toHeader(); // ['X-API-TOKEN' => 'YOUR-API-TOKEN'],
 ```
 
-#### Http Transporter class
+#### Http Transport class
 
-Using the HTTP Transporter class, you can discover the installed PSR-18 client and return the PSR-18 implementation.
+Using the HTTP Transport class, you can discover the installed PSR-18 client and return the PSR-18 implementation.
 
 ```php
 use JustSteveKing\Tools\SDK\Transport\HttpTransport;
 
 $client = HttpTransport::client(); // HttpClient PSR-18 implementation.
 ```
+
+#### SDK class
+
+The SDK class is designed for you to extend for your own SDKs, it accepts one property in its constructor which will be a PSR-18 compliant HTTP client.
+
+```php
+use JustSteveKing\Tools\SDK\SDK;
+use JustSteveKing\Tools\SDK\Transport\HttpTransport;
+
+$sdk = new SDK(
+    client: HttpTransport::client(),
+);
+
+// Fetch the attached client:
+$sdk->client();
+
+// Replace the attached client
+$sdk->setClient(
+    client: new \Http\Mock\Client(),
+);
+```
+
+#### Building your own SDK
+
+To build your own SDK using these tools, you can easily scaffold it out using the components provided.
+If you cannot quite scaffold it out, then please feel free to drop an Issue or PR so that I can build out better support for more use cases.
+
+```php
+use JustSteveKing\Tools\Http\Headers\Authorization;
+use JustSteveKing\Tools\SDK\SDK;
+use JustSteveKing\Tools\SDK\Transport\HttpTransport;
+
+class Acme extends SDK
+{
+    public function __construct(
+        protected HttpClient $client,
+        private readonly Authorization $auth,    
+    ) {}
+    
+    public static function build(string $apiToken): Acme
+    {
+        return new Acme(
+            client: HttpTransport::client(),
+            auth: (new Authorization(
+                value: $apiToken,
+            )),
+        );
+    }
+}
+```
+
+From here, you can start to add your SDK logic within the `Acme` class.
+
+```php
+$acme = Acme::build(
+    apiToken: 'YOUR-API-TOKEN',
+);
+
+// Then you can start to do things like:
+$acme->projects()->list();
+```
+
+#### Resource class
+
+You can use the Resource class to define the resources on your API, on your SDK.
+
+```php
+use JustSteveKing\Tools\Http\Enums\Method;
+use JustSteveKing\Tools\Http\Request;
+use JustSteveKing\Tools\SDK\Resource;
+use JustSteveKing\Tools\SDK\SDK;
+use JustSteveKing\Tools\SDK\Transport\HttpTransport;
+
+$resource = new Resource(
+    sdk: new SDK(
+        client: HttpTransport::client(),
+    ),
+);
+
+// Access the underlying SDK
+$resource->sdk();
+
+// Access the client from the resource
+$resource->sdk()->client();
+
+// Example of sending a request
+$resource->sdk()->client()->sendRequest(
+    request: new Request(
+        method: Method::GET,
+        uri: 'https://api.domain.com/resource',
+    ),
+);
+```
+
+Of course the above code is just an example of what you can do, you can abstract around this as much as you like.
 
 ## Testing
 
