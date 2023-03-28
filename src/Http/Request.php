@@ -9,15 +9,15 @@ use JustSteveKing\Tools\Contracts\Http\RequestContract;
 use JustSteveKing\Tools\Http\Enums\Method;
 use Psr\Http\Message\RequestInterface;
 
-final readonly class Request implements RequestContract
+final class Request implements RequestContract
 {
     /**
      * @param Method $method The request method.
      * @param string $uri The request URI.
      */
     public function __construct(
-        public Method $method,
-        public string $uri,
+        public readonly Method $method,
+        public readonly string $uri,
     ) {
     }
 
