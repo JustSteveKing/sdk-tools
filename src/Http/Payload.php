@@ -15,7 +15,8 @@ final readonly class Payload implements PayloadContract
      */
     public function __construct(
         private string $content,
-    ) {}
+    ) {
+    }
 
     /**
      * @inheritDoc
