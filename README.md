@@ -1,5 +1,10 @@
 # JustSteveKing SDK Tools
 
+> [!WARNING]
+> **This package is no longer maintained.** It's replaced by [juststeveking/sdk-toolbox](https://github.com/JustSteveKing/sdk-toolbox), which covers what these tools did (requests, responses, authentication headers and a transport) and builds a full SDK framework on PSR-18 alone: typed requests, retries, RFC 9457 errors, OAuth, pagination, caching and testing tools.
+>
+> Existing versions stay installable, so nothing that depends on this package breaks.
+
 <!-- BADGES_START -->
 [![Latest Version][badge-release]][packagist]
 [![Software License][badge-license]][license]
